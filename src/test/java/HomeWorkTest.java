@@ -146,7 +146,6 @@ public class HomeWorkTest {
     // 7. Для вызова DELETE DELETE OBJECT проверьте статус ответа,
     // сообщение и что в сообщении содержится переданный id объекта
 
-    // Andrei Idt example
     @Test
     public void getElementsWithProperty() {
         List<Map<String, Object>> list = given()
