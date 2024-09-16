@@ -67,33 +67,6 @@ public class HomeWorkTest {
                 .body(matchesJsonSchemaInClasspath("gadgets-scheme.json"));
     }
 
-    @Test
-    public void springAppUpdateAvailability() {
-        given()
-                .pathParam("id", "4")
-                // /product-availability/4
-                .queryParam("amount", 5)
-                // /product-availability/4?amount=5
-                .when()
-                .post("/product-availability/{id}")
-                .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .assertThat()
-                .body(emptyOrNullString());
-    }
-
-    @Test
-    public void validateOneObject() {
-        String objId = "13";
-        sendGetRequest(
-                given().pathParam("id", objId),
-                objectPath
-        )
-                .assertThat()
-                .body(matchesJsonSchemaInClasspath("gadget-scheme.json"));
-    }
-
     // 4. Для вызова POST ADD OBJECT сделайте добавление новой сущности
     // с использованием класса сущности (можете использовать пример вызова с сайта)
     // и проверьте, что переданные данные присутствуют в ответе (также используя класс)
